@@ -86,14 +86,14 @@
         </div>
     </section>
 
-   <!-- Seção Contato -->
-<section id="contato" class="contato">
+   <!-- Seção de Contato -->
+   <section id="contato" class="contato">
     <div class="container">
         <h2>Entre em Contato</h2>
         <p>Tem dúvidas? Entre em contato conosco e saiba mais sobre como nosso sistema pode ajudar o seu negócio!</p>
-
+        
         <!-- Formulário de Contato -->
-        <form id="contato-form" action="URL_DO_SEU_SERVIDOR" method="post">
+        <form id="contato-form">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -103,32 +103,27 @@
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" required></textarea>
 
-            <!-- Botão de envio -->
-            <button type="submit" class="cta-button" id="btn">Enviar Mensagem</button>
+            <button type="submit" class="cta-button">Enviar Mensagem</button>
         </form>
     </div>
 </section>
 
 <script>
-    // Espera o carregamento completo do DOM
-    document.addEventListener('DOMContentLoaded', function() {
-        // Obtém o formulário e o botão de envio
-        const form = document.getElementById('contato-form');
-        const btn = document.getElementById('btn');
-
-        // Adiciona o evento de clique no botão
-        btn.addEventListener('click', function(event) {
-            // Impede o envio do formulário por enquanto
-            event.preventDefault();
-
-            // Exibe uma mensagem de sucesso ao enviar
-            alert('Mensagem enviada!');
-
-            // Limpa os campos do formulário
-            form.reset();
-        });
+    // Captura o formulário e o evento de envio
+    const form = document.getElementById('contato-form');
+    
+    form.addEventListener('submit', function(event) {
+        // Previne o comportamento padrão do formulário (não envia os dados)
+        event.preventDefault();
+        
+        // Alerta de que a mensagem foi enviada
+        alert('Mensagem enviada!');
+        
+        // Limpa os campos do formulário
+        form.reset();
     });
 </script>
+
 
     
     
